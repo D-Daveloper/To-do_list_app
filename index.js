@@ -8,11 +8,8 @@ config();
 
 //set up Postgres 
 const db = new pg.Client({
-  user:process.env.USER,//database user
-  database:process.env.DATABASE,// dataabase name
-  host:process.env.HOST,//database host
-  password: process.env.PASSWORD,//database password
-  port:process.env.DBPORT //database port
+  connectionString:process.env.DB_STRiNG,
+  connectionTimeoutMillis:30000,
 });
 
 const app = express();//set up express
